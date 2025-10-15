@@ -1,18 +1,13 @@
 import React, { useState, useEffect, useMemo } from 'react';
 
-// === Konfigurasi Awal ===
 const API_URL = 'http://localhost:3001';
 
-// === Komponen Pembantu (Helpers) ===
-
-// Komponen untuk backdrop modal dengan efek blur
 const ModalBackdrop = ({ children }) => (
   <div className="fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm z-40 flex justify-center items-center p-4">
     {children}
   </div>
 );
 
-// Komponen untuk kerangka modal dengan desain baru
 const ModalContainer = ({ title, onClose, children }) => (
   <div className="bg-white rounded-xl shadow-2xl w-full max-w-lg z-50 transform transition-all animate-fade-in-up">
     <div className="flex justify-between items-center p-5 border-b border-gray-200">
@@ -27,12 +22,10 @@ const ModalContainer = ({ title, onClose, children }) => (
   </div>
 );
 
-// Ikon untuk tombol aksi
 const ViewIcon = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>;
 const EditIcon = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>;
 const DeleteIcon = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>;
 
-// === Komponen Utama ===
 
 // 1. Komponen untuk Form Tambah/Edit Transaksi
 function TransactionForm({ transaction, onSave, onCancel, statusOptions }) {
