@@ -33,7 +33,7 @@ Open the first terminal :
 2. Install all required packages (only once) -> npm install
 3. Run the API server -> npm start
 
-Your API server will now be running at http://localhost:3001. Keep this terminal open.
+API server will now be running at http://localhost:3001. Keep this terminal open.
 
 2. Running the Frontend (React Application)
 Open second terminal:
@@ -41,7 +41,7 @@ Open second terminal:
 2. Install all required packages (only once) -> npm install
 3. Run the React application -> npm start
 
-The application will automatically open in your browser at http://localhost:3000.
+The application will automatically open in browser at http://localhost:3000.
 
 📁 Folder Structure
 
